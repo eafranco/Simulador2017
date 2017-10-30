@@ -1,0 +1,21 @@
+#ifndef CONTROLSIMULADOR_H
+#define CONTROLSIMULADOR_H
+#include <QVector>
+#include <QMessageBox>
+#include "proceso.h"
+#include "cpu.h"
+
+class ControlSimulador
+{
+public:
+    ControlSimulador();
+    ~ControlSimulador();
+    QVector<Proceso *> procesos;
+    QVector<CPU *> procesadores;
+    void iniciarSimulacion();
+    bool apagar;
+    bool pausa;
+
+};
+
+#endif // CONTROLSIMULADOR_H
