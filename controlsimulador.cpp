@@ -33,7 +33,7 @@ ControlSimulador::~ControlSimulador()
  }
  procesos.clear();
 
- Proceso::cuenta = 0; //inicializa contador de proceso vivos
+ Proceso::cuenta = 0; //inicializa contador de procesos vivos
 
  for(int i=0; i<procesadores.size(); i++){
      delete procesadores[i];
@@ -41,7 +41,7 @@ ControlSimulador::~ControlSimulador()
  procesadores.clear();
 }
 
-// Inicia ciclo de simulación
+// Inicia ciclo de simulación con Round-Robin
 void ControlSimulador::iniciarSimulacion()
 {
     while( apagar==false && procesos.size()>=1){
@@ -50,7 +50,6 @@ void ControlSimulador::iniciarSimulacion()
         for(int i=0; i<procesos.size(); i++) {
 
             //esta con dos procesadores alternando ejecucion
-            //queda el reto de mandarlos en paralelo
             procesadores[i%2]->ejecuta( procesos[i] );
 
             if ( procesos[i]->estado == FINALIZADO  ) {
