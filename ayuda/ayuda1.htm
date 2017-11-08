@@ -1,0 +1,1164 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+<meta name=Title content="">
+<meta name=Keywords content="">
+</head>
+
+<body bgcolor=white lang=ES>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-right:23.8pt;text-align:center'><b><span
+lang=ES-TRAD style='font-size:14.0pt;color:black'>Arquitectura de Máquina
+Virtual</span></b></p>
+
+<p class=MsoNormal style='text-indent:35.45pt'><b><span lang=ES-TRAD
+style='font-size:14.0pt;color:black'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.9pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:-18.0pt'><span
+lang=ES-TRAD style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
+lang=ES-TRAD style='font-size:7.0pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>Código de instrucción:&nbsp;</span></b><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>6 dígitos decimales (2 código
+de Operación, 4 dirección de memoria)</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=ES-TRAD style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
+lang=ES-TRAD style='font-size:7.0pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>Registro<b>&nbsp;A
+(acumulador)</b></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=ES-TRAD style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
+lang=ES-TRAD style='font-size:7.0pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>Contador de programa<b>&nbsp;PC
+(&nbsp;memPointer)</b></span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=ES-TRAD style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
+lang=ES-TRAD style='font-size:7.0pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>Apuntador a memoria de la
+pila&nbsp;<b>SP</b>&nbsp;(<b>stackPointer)</b>.</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=ES-TRAD style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
+lang=ES-TRAD style='font-size:7.0pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+lang=ES-TRAD style='font-size:10.0pt;color:black'>Datos:&nbsp;<b>enteros</b>&nbsp;(6
+dígitos decimales) y&nbsp;<b>cadenas</b>&nbsp;(1 carácter ocupa 3 dígitos
+decimales).</span></p>
+
+<p class=MsoNormal style='text-indent:35.4pt'><span lang=ES-TRAD
+style='font-size:10.0pt;font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:35.4pt'><span lang=ES-TRAD
+style='font-size:10.0pt;font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=695
+ style='width:521.15pt;margin-left:-4.0pt;border-collapse:collapse'>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  background:#FFCC00;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>Instrucción
+  Ensamblador</span></b></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#FFCC00;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>Instrucción Máquina</span></b></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border:
+  solid windowtext 1.0pt;border-left:none;background:#FFCC00;padding:0cm 3.5pt 0cm 3.5pt;
+  height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>Descripción</span></b></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#FFCC00;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>Ejemplo Máquina</span></b></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#FFCC00;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif'>Ejemplo Ensamblador</span></b></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.3pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:18.3pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ASP</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:18.3pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>08</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:18.3pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Asigna un valor
+  entero&nbsp;<b>positivo</b>&nbsp;al acumulador.</span></p>
+  </td>
+  <td width=68 colspan=2 style='width:50.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:18.3pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>080005</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:18.3pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ASP 5</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:18.3pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:16.85pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:16.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ASN</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>09</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.85pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Asigna un valor
+  entero&nbsp;<b>negativo</b>&nbsp;al acumulador.</span></p>
+  </td>
+  <td width=68 colspan=2 style='width:50.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>090007</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ASN 7</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:16.85pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RD</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>10</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Lee entero del
+  teclado y guarda en&nbsp;memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>100020</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RD Y</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>WD</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>11</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Escribe en pantalla
+  entero leído desde la memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>110020</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>WD Y</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>NL</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>12</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salta a línea
+  siguiente en la pantalla.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>120000</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>NL</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RS</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>13</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Lee cadena y
+  guarda a partir de dirección de memoria. (máximo 40 caracteres)</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>130100</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RS S1</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:silver;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>WS</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>14</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Escribe en pantalla
+  cadena a partir de dirección de memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>140100</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>WS S1</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FF9900;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt'>LDA</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>20</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Carga en A
+  valor desde la memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>200035</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>LDA Z</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FF9900;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt'>STA</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>21</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Guarda en
+  memoria el valor actual de A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>210007</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>STA W</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ADD</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>30</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Suma A con
+  variable, resultado queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>300035</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>ADD Z</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>SUB</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>31</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Resta A con
+  variable ,resultado queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>310007</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>SUB Y</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>DIV</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>32</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Divide A con
+  variable, resultado queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>320020</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>DIV Y</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>MUL</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>33</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Multiplica A
+  con variable, resultado queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>330005</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>MUL X</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>MOD</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>34</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Residuo de la
+  división, de A modulo variable, resultado queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>340007</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>MOD X</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#99CCFF;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>EXP</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>35</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Exponente de
+  &nbsp;A ^&nbsp;variable, resultado en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>350005</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>EXP E</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.85pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#9BBB59;padding:0cm 3.5pt 0cm 3.5pt;height:15.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>J</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>40</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.85pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salto
+  incondicional, a&nbsp;dirección de memoria (una etiqueta).</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>400110</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.85pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>J J1</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.85pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#9BBB59;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JLT</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>41</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salta si A
+  menor a cero a&nbsp;dirección de memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>410050</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JLT J2</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#9BBB59;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JEQ</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>42</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salta si igual
+  A==0 a dirección de memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>420060</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JEQ J3</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#9BBB59;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JGT</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>43</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salta si A
+  mayor a cero a dirección de memoria.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>430120</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JGT J4</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 valign=bottom style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#9BBB59;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>COMP</span></p>
+  </td>
+  <td width=83 nowrap valign=bottom style='width:62.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>44</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 valign=bottom style='width:256.3pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Compara: Resta A
+  menos variable, valor queda en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 valign=bottom style='width:50.95pt;border-top:
+  none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>440025</span></p>
+  </td>
+  <td width=96 colspan=2 valign=bottom style='width:72.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>COMP Z</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:16.55pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FAC090;padding:0cm 3.5pt 0cm 3.5pt;height:16.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JSUB</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>50</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.55pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Salto a
+  subrutina (identificada con etiqueta), coloca en&nbsp;Pila la
+  dirección&nbsp;de retorno.</span></p>
+  </td>
+  <td width=68 colspan=2 style='width:50.95pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>500090</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:16.55pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>JSUB S1</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:16.55pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FAC090;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RSUB</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>51</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Regresa de
+  subrutina, coloca en PC el valor de regreso desde la Pila.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>510000</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>RSUB</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FAC090;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>PUSH</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>52</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Coloca
+  en&nbsp;&nbsp;Pila valor desde A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>520000</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>PUSH</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FAC090;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>POP</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>53</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Saca de la Pila
+  valor, coloca en A.</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>530000</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>POP</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=96 nowrap colspan=2 style='width:72.2pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#FAC090;padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>END</span></p>
+  </td>
+  <td width=83 nowrap style='width:62.55pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>64</span></p>
+  </td>
+  <td width=342 nowrap colspan=4 style='width:256.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;color:black'>Fin de programa</span></p>
+  </td>
+  <td width=68 nowrap colspan=2 style='width:50.95pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>640000</span></p>
+  </td>
+  <td width=96 colspan=2 style='width:72.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='font-size:10.0pt;color:black'>END</span></p>
+  </td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:15.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=67 style='width:50.05pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=113 colspan=2 style='width:84.7pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=51 style='width:38.0pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=249 style='width:187.0pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=36 style='width:27.3pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=70 colspan=2 style='width:52.8pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=94 colspan=2 style='width:70.75pt;padding:0cm 0cm 0cm 0cm'></td>
+  <td width=14 colspan=2 style='width:10.55pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+ <tr style='height:9.5pt'>
+  <td width=67 style='width:50.05pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=30 style='width:22.15pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=83 style='width:62.55pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=51 style='width:38.0pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=249 style='width:187.0pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=36 style='width:27.3pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=5 style='width:4.0pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=65 style='width:48.8pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=3 style='width:2.15pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=91 style='width:68.6pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=5 style='width:3.55pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+  <td width=9 style='width:7.0pt;padding:0cm 0cm 0cm 0cm;height:9.5pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b><span lang=ES-TRAD style='font-size:10.0pt;font-family:
+"Times New Roman",serif;color:black'>Notas</span></b><span lang=ES-TRAD
+style='font-size:10.0pt;font-family:"Times New Roman",serif;color:black'>: </span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;font-family:"Times New Roman",serif;
+color:black'>Las variables serán sustituidas por direcciones de
+memoria.&nbsp;Las operaciones de salto y llamado a subrutinas requieren la
+definición de etiquetas que serán sustituidas por direcciones de memoria.</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=ES-TRAD style='font-size:10.0pt'>Ejemplo de
+programa en ensamblador </span></b></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>#LEE
+NOMBRE Y EDAD Y DICE SI ES JOVEN O VIEJO SI EDAD &gt;=60, </span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>#S1
+y S2, SON LOS TEXTOS A MOSTRAR.</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>ASP
+60</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>STA
+M</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>RS
+S1</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>RS
+S2</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>RS N</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>RD E</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>LDA
+M</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>COMP
+E</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>JGT
+J1</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>WS N</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>WS
+S1</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>END</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>J1</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>WS N</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>WS
+S2</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt;color:black'>END</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=ES-TRAD style='font-size:10.0pt'>Descripción</span></b><span
+lang=ES-TRAD style='font-size:10.0pt'>: </span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>El símbolo # al
+inicio de una línea, indica comentario y se ignoran los caracteres siguientes.
+Las líneas deben iniciar con una instrucción válida o etiqueta de salto, las
+instrucciones pueden tener un operando o sólo el código de instrucción. Las
+variables deben iniciar con letras y pueden ser de varios caracteres.</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=ES-TRAD style='font-size:10.0pt'>Ejemplo de
+archivo en lenguaje máquina (resultado de la traducción)</span></b></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>&nbsp;@ 138 </span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>80060</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>210016</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>130017</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>130057</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>130097</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>100137</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>200016</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>440137</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>430012</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>140097</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>140017</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>640000</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>140097</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>140057</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>640000</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span lang=ES-TRAD>Descripción</span></b><span
+lang=ES-TRAD>:</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>La primera línea
+indica la cantidad aproximada de memoria que requiere el programa, se calcula
+al ser traducido por el ensamblador.&nbsp; El total es la cantidad de líneas,
+más las variables enteras, más las variables cadena (multiplicando por 40 cada
+variable cadena).</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>El resto de las
+líneas son las instrucciones en lenguaje máquina de la máquina virtual (en
+notación decimal). Las operaciones con argumentos requieren direcciones de
+memoria. </span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD style='font-size:10.0pt'>Al cargar al
+simulador se omite la primer línea, de manera que las instrucciones hacen
+referencia a partir de la posición 0 de memoria, que es donde se carga la
+primer instrucción del programa. La memoria máxima de la computadora es de
+10,000 localidades, los programas pueden cargarse en cualquier posición, por
+ello, al ejecutar se emplea un método de direccionamiento relativo al sumar la
+posición de inicio del programa a la dirección de memoria que indique la
+instrucción a ejecutar (desplazamiento en base a la dirección de carga del
+programa).</span></p>
+
+<p class=MsoNormal><span lang=ES-TRAD>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
