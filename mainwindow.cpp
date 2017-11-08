@@ -108,20 +108,26 @@ void MainWindow::ayuda()
 {
  helpFile *ayuda1=new helpFile();
  ayuda1->show();
- ayuda1->showFile("../Ejemplos/ayuda1.htm");
+ ayuda1->showFile(":/ayuda/ayuda1.htm"); // : ruta absoluta desde la raiz del proyecto
+  /*crear recursos en QT:
+ Right clicking on your project
+ Add new
+ Step on the left option QT
+ Qt Resource file
+ Follow the wizard to add one*/
 
 }
 
 void MainWindow::acercade()
 {
     QString msg;
-    msg.append("CPU & OS simulator 3.0\n\n");
+    msg.append("CPU & OS simulator 3.1\n\n");
     msg.append("Es un software simulador de una computadora virtual, de su sistema operativo y de herramientas propias de la programación de sistemas.\n");
     msg.append("El objetivo original es utilizarlo en cursos de programación de sistemas, "
                "compiladores, sistemas operativos y cursos iniciales de fundamentos"
                " de programación, como recurso didáctico para analizar el funcionamiento de la computadora y de los lenguajes de programación.\n\n");
     msg.append("Contacto: Enrique Ayala Franco\neafranco@gmail.com\n\n");
-    msg.append("septiembre, 2016\n");
+    msg.append("noviembre, 2017\n");
     QMessageBox::about(this,"Acerca de",msg);
     msg.clear();
 }

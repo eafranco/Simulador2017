@@ -44,5 +44,5 @@ void editFile::on_buttonBox_helpRequested()
 {
     helpFile *ayuda=new helpFile();
     ayuda->show();
-    ayuda->showFile("../Ejemplos/ayuda1.htm");
+    ayuda->showFile(":/ayuda/ayuda1.htm");
 }
